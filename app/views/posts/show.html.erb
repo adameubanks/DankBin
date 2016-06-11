@@ -15,3 +15,13 @@
 <h4 class="description"><%= @post.description %></h4>
 </div>
 </div>
+<div class="btn-group pull-right">
+  <%= link_to like_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    <%= @post.get_upvotes.size %>
+  <% end %>
+  <%= link_to dislike_post_path(@post), method: :put, class: "btn btn-default btn-sm" do %>
+  <i class="fa fa-arrow-down" aria-hidden="true"></i>
+    <%= @post.get_downvotes.size %>
+  <% end %>
+</div>
