@@ -12,7 +12,7 @@
  </h1>
 <div class="panel panel-default">
 <div class="panel-heading">
-<h4 class="description"><%= @post.description %></h4>
+<h3 class="description"><%= @post.description %></h3>
 </div>
 </div>
 <div class="btn-group pull-right">
@@ -25,3 +25,24 @@
     <%= @post.get_downvotes.size %>
   <% end %>
 </div>
+<br>
+<small>
+<h3 class="comments_title">
+  <%= @post.comments.count %> Comments
+</h3>
+
+<div id="comments">
+  <%= render :partial => @post.comments %>
+</div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<%= simple_form_for [@post, Comment.new]  do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Add Comment", class: "btn btn-primary" %>
+<% end %>
+</div>
+</div>
+</small>
