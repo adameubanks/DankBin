@@ -31,17 +31,23 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <% if user_signed_in? %>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to 'Account', edit_user_registration_path %></li>
-							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-            </ul>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to 'New Post', new_post_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-user"></span><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Account', edit_user_registration_path %></li>
+  							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+              </ul>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          </ul>
         <% end %>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
