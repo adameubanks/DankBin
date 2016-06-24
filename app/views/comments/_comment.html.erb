@@ -3,7 +3,7 @@
 <%= div_for(comment) do %>
 	<div class="comments_wrapper clearfix">
 		<div class="pull-left">
-			<p class="lead"><%= comment.body %></p>
+			<p class="lead" style="text-transform:none;"><%= comment.body %></p>
 			<p><small>Submitted <strong><%= time_ago_in_words(comment.created_at) %> ago</strong>
          by <%= comment.user.name %></small></p>
 		</div>

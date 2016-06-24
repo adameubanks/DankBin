@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :comments
+  ActiveAdmin.routes(self)
   devise_for :users
+  resources :comments
   resources :posts do
     member do
       put 'like', to: 'posts#upvote'
