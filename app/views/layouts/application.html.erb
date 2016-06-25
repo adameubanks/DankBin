@@ -5,7 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= favicon_link_tag %>
   <script src="https://use.fontawesome.com/5227777084.js"></script>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 </head>
 <body>
   <nav class="navbar navbar-default">
@@ -18,7 +20,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<%= root_path %>">DankBin</a>
+        <a href="<%= root_path %>">
+          <%= image_tag("logo.png", :alt => "rss feed", :height =>"65", :width => "225") %>
+        </a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -28,7 +32,7 @@
             <li><%= link_to 'New Post', new_post_path %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-user" aria-hidden="true"></i></span><span class="caret"></span></a>
+                <i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Account', edit_user_registration_path %></li>
   							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
