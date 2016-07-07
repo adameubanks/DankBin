@@ -15,6 +15,7 @@ gem 'activeadmin', '~> 1.0.0.pre2'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
+gem 'mailboxer'
 
 group :development, :test do
 	gem 'sqlite3'

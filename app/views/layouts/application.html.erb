@@ -8,13 +8,19 @@
   <%= favicon_link_tag %>
   <script src="https://use.fontawesome.com/5227777084.js"></script>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <style>
+  .glyphicon {
+    font-size: 15px;
+  }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="bs-example-navbar-collapse-1" aria-expanded="false">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+         data-target="bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -24,18 +30,29 @@
           <%= image_tag("logo.png", :alt => "rss feed", :height =>"65", :width => "225") %>
         </a>
       </div>
-
+      <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+      });
+      </script>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <% if user_signed_in? %>
         <div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li><%= link_to 'New Post', new_post_path %></li>
+            <li><%= link_to '<i class="glyphicon glyphicon-plus"></i>'.html_safe,
+             new_post_path, { :class => 'tooltips', 'data-toggle' => 'tooltip',
+                'data-placement' => 'left', :title => 'New Post' } %></li>
+            <li><%= link_to '<i class="glyphicon glyphicon-inbox"></i>'.html_safe,
+              conversations_path, { :class => 'tooltips', 'data-toggle' => 'tooltip',
+                'data-placement' => 'bottom', :title => 'Inbox' } %></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <i class="glyphicon glyphicon-user"></i><span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+               aria-expanded="false">
+                <i class="glyphicon glyphicon-user"><span class="caret"></span></i></a>
               <ul class="dropdown-menu">
                 <li><%= link_to 'Account', edit_user_registration_path %></li>
   							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+                <li><%= link_to current_user.name, '#' %></li>
               </ul>
             </li>
           </ul>

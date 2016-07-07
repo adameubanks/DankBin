@@ -4,9 +4,9 @@ class MessagesController < ApplicationController
   end
 def index
  @messages = @conversation.messages
-  if @messages.length > 10
-   @over_ten = true
-   @messages = @messages[-10..-1]
+  if @messages.length > 5
+   @over_5 = true
+   @messages = @messages[-5..-1]
   end
   if params[:m]
    @over_ten = false
