@@ -2,15 +2,19 @@
 <html>
 <head>
   <title>DankBin</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= favicon_link_tag %>
   <script src="https://use.fontawesome.com/5227777084.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
   <style>
   .glyphicon {
     font-size: 15px;
+  }
+  .col-centered{
+    float: none;
+    margin: 0 auto;
   }
   </style>
 </head>
@@ -66,11 +70,12 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div id="main_content" class="container">
-		<% flash.each do |name, msg| %>
-			<%= content_tag(:div, msg, class: "alert alert-info") %>
-		<% end %>
-				<%= yield %>
-		</div>
-	</div>
+  <div class="col-lg-12 col-centered">
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert alert-info") %>
+    <% end %>
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <% @posts.each do |link| %>
   <div class="link row clearfix">
-    <h2>
+    <h2 color='#93c54b'>
       <%= link_to link.title, link %><br>
       <small class="author">Submitted <%= time_ago_in_words(link.created_at) %> by
         <%= link.user.name %></small>
@@ -8,13 +8,13 @@
   </div>
   <div class="btn-group">
   <%= link_to like_post_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    <i class="fa fa-arrow-up" aria-hidden="true"></i>
     <%= link.get_upvotes.size %>
   <% end %>
   <%= link_to dislike_post_path(link), method: :put, class: "btn btn-default btn-sm" do %>
-  <i class="fa fa-arrow-down" aria-hidden="true"></i>
+    <i class="fa fa-arrow-down" aria-hidden="true"></i>
     <%= link.get_downvotes.size %>
   <% end %>
 </div>
-  <hr style="height:1px;color:#98978b;background-color:#98978b;">
+<hr style="height:1px;border:none;color:#98978b;background-color:#98978b;" />
 <% end %>
