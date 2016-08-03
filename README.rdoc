@@ -2,5 +2,7 @@
 
 DanBin is a reddit like clone for Rails. I intend to add more features to it as I progress in my Ruby On Rails knowledge.
 
+Create posts, comments and hold conversations with anyone on the site! Upvote or downvote posts. The ones with the most votes and that are the newest will be displayed first.
+
 You can view the site live here:
 http://dankbin.herokuapp.com/
