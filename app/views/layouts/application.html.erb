@@ -55,7 +55,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to '<i class="glyphicon glyphicon-plus"></i>'.html_safe,
              new_post_path, { :class => 'tooltips', 'data-toggle' => 'tooltip',
-                'data-placement' => 'left', :title => 'New Post' } %></li>
+                'data-placement' => 'bottom', :title => 'New Post' } %></li>
             <li><%= link_to '<i class="glyphicon glyphicon-inbox"></i>'.html_safe,
               conversations_path, { :class => 'tooltips', 'data-toggle' => 'tooltip',
                 'data-placement' => 'bottom', :title => 'Inbox' } %></li>
@@ -66,9 +66,9 @@
               <ul class="dropdown-menu">
                 <li><%= link_to 'Account', edit_user_registration_path %></li>
   							<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-                <li><%= link_to current_user.name, '#' %></li>
               </ul>
             </li>
+            <li><%= link_to current_user.name.split(' ').first, '#' %></li>
           </ul>
         </div><!-- /.navbar-collapse -->
     <% else %>
