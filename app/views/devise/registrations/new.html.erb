@@ -22,10 +22,10 @@
 	  	<%= f.label :password_confirmation %>
 	  	<%= f.password_field :password_confirmation, class: "form-control", required: true %>
 	  </div>
-
+    <p style="text-align:right;"><i>Note that by signing up, you agree to our
+      <a href='/policy'>policy standards</a></i></p>
 	  <div class="form-group">
 	  	<%= f.submit "Sign up", class: "btn btn-lg btn-primary" %>
 	  </div>
 <% end %>
-
 <%= render "devise/shared/links" %>

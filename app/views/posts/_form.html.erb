@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <div class="form-group">
+  <div class="form-group" contenteditable="true" spellcheck="true">
      <%= f.label :title %><br>
      <%= f.text_field :title, class: "form-control" %>
    </div>
-   <div class="form-group">
+   <div class="form-group" contenteditable="true" spellcheck="true">
      <%= f.label :description %><br>
-     <%= f.text_area :description, class: "form-control" %>
+     <%= f.text_area :description, class: "form-control", style: "height:260px;" %>
    </div>
    <br>
    <div class="form-group">

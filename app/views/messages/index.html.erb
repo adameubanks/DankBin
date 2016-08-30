@@ -41,7 +41,7 @@ $(document).ready(function(){
 </div>
 <div class="col-md-10 col-md-offset-1">
 <%= simple_form_for [@conversation, @message] do |f| %>
-<div class="form-group">
+<div class="form-group" contenteditable="true" spellcheck="true">
   <%= f.text_area :body, class: "form-control" %>
 </div>
   <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
