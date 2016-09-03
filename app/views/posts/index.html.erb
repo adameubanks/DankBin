@@ -1,4 +1,5 @@
-<% @posts.five_days_ago.sort_by { |post| post.cached_votes_total }.reverse.each do |link| %>
+<% @posts.five_days_ago.sort_by { |post| post.cached_votes_total, post.created_at
+ }.reverse.each do |link| %>
   <div class="link row clearfix">
     <h2 color='#93c54b'>
       <%= link_to link.title, link %><br>
