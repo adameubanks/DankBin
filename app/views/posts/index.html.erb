@@ -22,7 +22,7 @@
 <% end %>
 <hr style="height:1px;border:none;color:#c3c2bb;background-color:#c3c2bb;" />
 <% end %>
-<% @posts.later.sort_by { |post| post.cached_votes_total }.reverse.each do |link| %>
+<% @posts.later.sort_by { |post| post.cached_votes_total }.reverse.each do |post| %>
 <div class="link row clearfix">
   <h2 color='#93c54b'>
     <%= link_to post.title, post %><br>
