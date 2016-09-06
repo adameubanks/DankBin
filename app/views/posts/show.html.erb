@@ -7,7 +7,7 @@
    		<%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
    	</div>
     <% if post.link != nil %>
-      <%= link_to 'Visit URL', post.link, method: :put, target: '_blank',
+      <%= link_to 'Visit URL', @post.link, method: :put, target: '_blank',
       class: "btn btn-info btn-sm" %>
     <% end %>
   </div>
