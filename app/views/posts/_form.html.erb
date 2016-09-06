@@ -20,6 +20,10 @@
      <%= f.text_area :description, :required => true, class: "form-control",
       style: "height:260px;" %>
    </div>
+   <div class="form-group" contenteditable="true" spellcheck="true">
+      <%= f.label 'Link (Optional)' %><br>
+      <%= f.text_field :link, class: "form-control" %>
+    </div>
    <br>
    <div class="form-group">
      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
