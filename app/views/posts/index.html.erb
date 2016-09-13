@@ -16,7 +16,7 @@
     <%= post.get_downvotes.size %>
   <% end %>
 </div>
-<% if post.link != nil %>
+<% if post.link != '' %>
   <%= link_to 'Visit URL', post.link, method: :put, target: '_blank',
   class: "btn btn-info btn-sm pull-right" %>
 <% end %>
